@@ -15,6 +15,7 @@ import {ContactsPage} from "../pages/contacts/contacts";
 import {ProfilePage} from "../pages/profile/profile";
 import {ScanPage} from "../pages/scan/scan";
 import {SearchPage} from "../pages/search/search";
+import {StartPage} from "../pages/start/start";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {SearchPage} from "../pages/search/search";
     ContactsPage,
     ProfilePage,
     ScanPage,
-    SearchPage
+    SearchPage,
+    StartPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import {SearchPage} from "../pages/search/search";
     ContactsPage,
     ProfilePage,
     ScanPage,
-    SearchPage
+    SearchPage,
+    StartPage
   ],
   providers: [
     StatusBar,
