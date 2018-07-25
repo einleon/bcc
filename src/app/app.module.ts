@@ -16,6 +16,8 @@ import {ProfilePage} from "../pages/profile/profile";
 import {ScanPage} from "../pages/scan/scan";
 import {SearchPage} from "../pages/search/search";
 import {StartPage} from "../pages/start/start";
+import {LoginPage} from "../pages/login/login";
+import {SignupPage} from "../pages/signup/signup";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {StartPage} from "../pages/start/start";
     ProfilePage,
     ScanPage,
     SearchPage,
-    StartPage
+    StartPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import {StartPage} from "../pages/start/start";
     ProfilePage,
     ScanPage,
     SearchPage,
-    StartPage
+    StartPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
