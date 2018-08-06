@@ -1,3 +1,24 @@
 page-profile {
 
+  .profile-photo {
+    border-radius: 50%;
+    overflow: hidden;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .slogan{
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .job{
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .profile_heading{
+    font-size: 20px;
+  }
 }
