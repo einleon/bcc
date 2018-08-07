@@ -29,45 +29,15 @@
   </ion-grid>
   <ion-grid>
     <h2 class="profile_heading">Top-Skills</h2>
-    <ion-row>
-      <ion-list>
-        <ion-item>
-          Web-development
-        </ion-item>
-        <ion-item>
-          Agile project manager
-        </ion-item>
-        <ion-item>
-          Java Developer
-        </ion-item>
-      </ion-list>
-    </ion-row>
+    <div class="row" *ngFor="let data of skilldata">
+      <div class="col">{{data.skill}}</div>
+    </div>
   </ion-grid>
   <ion-grid>
     <h2 class="profile_heading">Experience and education</h2>
-    <ion-row>
-      <ion-col>
-        2018
-      </ion-col>
-      <ion-col>
-        BA at MCI
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        2017
-      </ion-col>
-      <ion-col>
-        Hilfsmitarbeiter McDonalds
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        2016
-      </ion-col>
-      <ion-col>
-        Müllmann
-      </ion-col>
-    </ion-row>
+      <div class="row" *ngFor="let data of experiencedata">
+        <div class="col">{{data.year}}</div>
+        <div class="col">{{data.job}}</div>
+      </div>
   </ion-grid>
 </ion-content>
