@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,19 +15,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
+  profil_name: any;
+  profilnamepush: any;
+  profilname;
+  skill_data: any;
+  skillCollection: any;
+  skilldata: any;
+  experience_data: any;
+  experienceCollection: any;
+  experiencedata: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.experience_data = [
-      { year: "2018", job: "BA at MCI" },
-      { year: "2017", job: "Hilfsarbeiter McDonalds" },
-      { year: "2016", job: "Müllmann" },
-      { year: "2015", job: "Arbeitslos" }
+      {year: "2018", job: "BA at MCI"},
+      {year: "2017", job: "Hilfsarbeiter McDonalds"},
+      {year: "2016", job: "Müllmann"},
+      {year: "2015", job: "Arbeitslos"}
     ];
 
     this.skill_data = [
-      { number: "1", skill: "Web-development" },
-      { number: "2", skill: "Agile project manager" },
-      { number: "3", skill: "Java Developer" },
+      {number: "1", skill: "Web-development"},
+      {number: "2", skill: "Agile project manager"},
+      {number: "3", skill: "Java Developer"},
     ];
+
+    this.profil_name = [
+      {firstname: "Perl", lastname: "Scheter"}
+    ];
+
+    this.profilnamepush = [];
+    this.profilnamepush.push(this.profil_name);
+    this.profilname = this.profilnamepush[Math.floor((Math.random() * this.profilnamepush.length))];
+    console.log(this.profilname);
+
 
     this.skillCollection = [];
     this.skillCollection.push(this.skill_data);

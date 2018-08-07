@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Profile (Name!)</ion-title>
+    <ion-title *ngFor="let data of profilname">{{data.firstname}} {{data.lastname}}</ion-title>
     <ion-buttons end>
       <button>
         <ion-icon name="build"></ion-icon>
