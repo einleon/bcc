@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CardPage} from "../pages/card/card";
 import {ContactsPage} from "../pages/contacts/contacts";
@@ -58,6 +59,7 @@ import {SignupPage} from "../pages/signup/signup";
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

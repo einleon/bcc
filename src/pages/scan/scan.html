@@ -7,12 +7,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>scan</ion-title>
+    <ion-title>Scan</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div>
+    <ion-input style="background-color: gray" type="text" [(ngModel)]="encodText"></ion-input>
+    <button ion-button block (click)="encode()">Encode</button>
+  </div>
+  <div>
+    <button ion-button block (click)="scan()">Scan</button>
+    <div *ngIf="scannedData.text">
+      <label>Barcode: </label>
+      <br>
+      <span>{{scannedData.text}}</span>
+    </div>
+  </div>
 
 </ion-content>
