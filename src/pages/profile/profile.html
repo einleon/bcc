@@ -21,7 +21,7 @@
   <ion-img class="profile-photo" width="90" height="90" src="assets/imgs/wgd.jpg"></ion-img>
   <ion-grid>
     <ion-row>
-      <ion-col width-50 offset-25>
+      <ion-col>
         <h2 class="slogan">young - motivated - dynamic</h2>
         <h3 class="job">CEO at Kölbö</h3>
       </ion-col>
@@ -29,15 +29,19 @@
   </ion-grid>
   <ion-grid>
     <h2 class="profile_heading">Top-Skills</h2>
-    <div class="row" *ngFor="let data of skilldata">
-      <div class="col">{{data.skill}}</div>
+    <div *ngFor="let data of skilldata">
+      <div>{{data.skill}}</div>
     </div>
   </ion-grid>
   <ion-grid>
     <h2 class="profile_heading">Experience and education</h2>
-      <div class="row" *ngFor="let data of experiencedata">
-        <div class="col">{{data.year}}</div>
-        <div class="col">{{data.job}}</div>
+    <div class="divTable">
+      <div class="divTableBody">
+        <div class="divTableRow" *ngFor="let data of experiencedata">
+          <div class="divTableCell">{{data.year}}</div>
+          <div class="divTableCell">{{data.job}}</div>
+        </div>
       </div>
+    </div>
   </ion-grid>
 </ion-content>
