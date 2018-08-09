@@ -19,6 +19,8 @@ import {SearchPage} from "../pages/search/search";
 import {StartPage} from "../pages/start/start";
 import {LoginPage} from "../pages/login/login";
 import {SignupPage} from "../pages/signup/signup";
+import { DataFinder } from '../providers/datafinder';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import {SignupPage} from "../pages/signup/signup";
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -60,7 +63,8 @@ import {SignupPage} from "../pages/signup/signup";
     StatusBar,
     SplashScreen,
     BarcodeScanner,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataFinder
   ]
 })
 export class AppModule {}
