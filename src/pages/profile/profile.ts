@@ -15,50 +15,31 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class ProfilePage {
 
-  profil_name: any;
-  profilnamepush: any;
-  profilname;
-  skill_data: any;
-  skillCollection: any;
-  skilldata: any;
-  experience_data: any;
-  experienceCollection: any;
-  experiencedata: any;
+  all_data: any;
+  all_dataCollection: any;
+  alldata:any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.experience_data = [
+
+    this.all_data = [
       {year: "2018", job: "BA at MCI"},
       {year: "2017", job: "Hilfsarbeiter McDonalds"},
       {year: "2016", job: "Müllmann"},
-      {year: "2015", job: "Arbeitslos"}
-    ];
-
-    this.skill_data = [
+      {year: "2015", job: "Arbeitslos"},
       {number: "1", skill: "Web-development"},
       {number: "2", skill: "Agile project manager"},
       {number: "3", skill: "Java Developer"},
-    ];
+      {firstname: "Perl", lastname: "Scheter"},
+      {mobilenumber: "+43 680 12345678"},
+      {address: "Radezkystraße 2, Lustenau"}
+    ]
 
-    this.profil_name = [
-      {firstname: "Perl", lastname: "Scheter"}
-    ];
+    this.all_dataCollection = [];
+    this.all_dataCollection.push(this.all_data);
+    this.alldata = this.all_dataCollection[Math.floor((Math.random() * this.all_dataCollection.length))];
+    console.log(this.alldata);
 
-    this.profilnamepush = [];
-    this.profilnamepush.push(this.profil_name);
-    this.profilname = this.profilnamepush[Math.floor((Math.random() * this.profilnamepush.length))];
-    console.log(this.profilname);
-
-
-    this.skillCollection = [];
-    this.skillCollection.push(this.skill_data);
-    this.skilldata = this.skillCollection[Math.floor((Math.random() * this.skillCollection.length))];
-    console.log(this.skilldata);
-
-
-    this.experienceCollection = [];
-    this.experienceCollection.push(this.experience_data);
-    this.experiencedata = this.experienceCollection[Math.floor((Math.random() * this.experienceCollection.length))];
-    console.log(this.experiencedata);
 
   }
 

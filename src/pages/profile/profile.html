@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title *ngFor="let data of profilname">{{data.firstname}} {{data.lastname}}</ion-title>
+    <ion-title *ngFor="let data of alldata">{{data.firstname}} {{data.lastname}}</ion-title>
     <ion-buttons end>
       <button>
         <ion-icon name="build"></ion-icon>
@@ -29,7 +29,7 @@
   </ion-grid>
   <ion-grid>
     <h2 class="profile_heading">Top-Skills</h2>
-    <div *ngFor="let data of skilldata">
+    <div *ngFor="let data of alldata">
       <div>{{data.skill}}</div>
     </div>
   </ion-grid>
@@ -37,7 +37,7 @@
     <h2 class="profile_heading">Experience and education</h2>
     <div class="divTable">
       <div class="divTableBody">
-        <div class="divTableRow" *ngFor="let data of experiencedata">
+        <div class="divTableRow" *ngFor="let data of alldata">
           <div class="divTableCell">{{data.year}}</div>
           <div class="divTableCell">{{data.job}}</div>
         </div>
