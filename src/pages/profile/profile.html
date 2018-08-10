@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Perl Scheter</ion-title>
+    <ion-title>{{firstname}} {{lastname}}</ion-title>
     <ion-buttons end>
       <button>
         <ion-icon name="build"></ion-icon>
@@ -22,15 +22,25 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <h2 class="slogan">WUHU</h2>
-        <h3 class="job">Still love Kölbö</h3>
+        <h2 class="slogan">{{slogan}}</h2>
+        <h3 class="job">{{job}} at {{company}}</h3>
       </ion-col>
     </ion-row>
-    <h2 class="profile_heading">Top-Skills</h2>
-    <ion-col>
-      <ion-item>JUHU</ion-item>
-    </ion-col>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      <h2 class="profile_heading">Top-Skills</h2>
+        <ion-item>{{topskill1}}</ion-item>
+        <ion-item>{{topskill2}}</ion-item>
+        <ion-item>{{topskill3}}</ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
     <h2 class="profile_heading">Experience and education</h2>
+      <div id = "beer"></div>
     <div class="divTable">
       <div class="divTableBody">
         <div class="divTableRow">
@@ -39,5 +49,6 @@
         </div>
       </div>
     </div>
+    </ion-row>
   </ion-grid>
 </ion-content>
