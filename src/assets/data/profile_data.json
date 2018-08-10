@@ -7,20 +7,20 @@
   "company": "Kölbö",
   "experience": [
     {
-      "year": "2018",
+      "year": 2018,
       "done_job": "BA at MCI"
     },
     {
-      "year": "2017",
+      "year": 2016,
+      "done_job": "Müllmann"
+    },
+    {
+      "year": 2017,
       "done_job": "Hilfsarbeiter McDonalds"
 
     },
     {
-      "year": "2016",
-      "done_job": "Müllmann"
-    },
-    {
-      "year": "2015",
+      "year": 2015,
       "done_job": "Arbeitslos"
     }
 

@@ -25,7 +25,14 @@ export class ProfilePage {
   place: any;
   design_card: any;
 
+  Html1: any;
+  Html2: any;
+  Html: any;
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private dataFinder : DataFinder) {
+
   }
 
   ionViewDidLoad() {
@@ -33,6 +40,9 @@ export class ProfilePage {
     this.dataFinder.getJSONDataAsync("./assets/data/profile_data.json").then(data => {
     this.SetQueryOptionsData(data);
   });
+
+
+
   }
 
   /* Sets data with returned JSON array */
@@ -53,10 +63,31 @@ export class ProfilePage {
     this.place= data.place;
     this.design_card= data.design_card;
 
-    console.log(this.experience);
-    console.log(this.experience.length);
 
-
+    this.generateHTMLfromArray(this.experience);
   }
 
+  generateHTMLfromArray(array) {
+    array.sort(function(a, b){return b.year - a.year});
+
+    this.Html = "<h2 class='profile_heading'>Experience and education</h2> <table id = 'customers'>";
+
+    for (var i in array) {
+      console.log("row " + i);
+      this.Html += "<tr>";
+      for (var j in array[i]) {
+        console.log(array[i][j]);
+        this.Html += "<td>"
+        this.Html += array[i][j];
+        this.Html += "</td>"
+      }
+      this.Html += "</tr>"
+    }
+    this.Html += "</table>";
+
+    console.log(this.Html);
+
+    document.getElementById("experience").innerHTML = this.Html;
+
+  }
 }
