@@ -22,4 +22,8 @@ export class CardPage {
     console.log('ionViewDidLoad CardPage');
   }
 
+  switch(){
+    console.log("Karte drehen");
+  }
+
 }

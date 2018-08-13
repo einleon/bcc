@@ -5,27 +5,27 @@
   Ionic pages and navigation.
 -->
   <ion-navbar>
-    <ion-title>Create your Card</ion-title>
+    <ion-title>Business Card</ion-title>
   </ion-navbar>
 
 
 
-<ion-card>
-  <ion-card-header>
-    Stephan Kleber
-  </ion-card-header>
+<ion-card (click)="switch()">
   <ion-card-content>
-    Müllstraße <br>
-    Andelsbuch <br><br/>
-    0664 3268438 <br>
-    steve@gluee.com <br>
-    Hauptsach mol a karta. Wäldersieg!
+    <div id = "name">Stephan Kleber</div>
+    <div id = "adress">
+      Wälderstraße 88c <br>
+      Andelsbuch
+    </div>
+    <div id = "contact">
+      +43680 12345678 <br>
+      steve@gmail.com
+    </div>
   </ion-card-content>
 </ion-card>
 
 <ion-card>
-    <img src="img/doctor.png"/>
+  <div id = "card_logo">
+    <img id = "logo" src="assets/imgs/mpd.png"/>
+  </div>
 </ion-card>
-
-
-
