@@ -9,6 +9,7 @@ import {DataFinder} from "../../providers/datafinder";
 })
 export class ProfilePage {
 
+  //Create Variables
   firstname: any;
   lastname: any;
   mail: any;
@@ -47,6 +48,7 @@ export class ProfilePage {
 
   /* Sets data with returned JSON array */
   SetQueryOptionsData(data : any) {
+    //Array Data into Variables
     this.firstname = data.firstname;
     this.lastname= data.lastname;
     this.mail= data.mail;
@@ -63,8 +65,11 @@ export class ProfilePage {
     this.place= data.place;
     this.design_card= data.design_card;
 
-
+    //Generate HTML Experience Table String from the Experience Array.
     this.generateHTMLfromArray(this.experience);
+    //Write out generated String
+    document.getElementById("experience").innerHTML = this.Html;
+
   }
 
   generateHTMLfromArray(array) {
@@ -86,8 +91,6 @@ export class ProfilePage {
     this.Html += "</table>";
 
     console.log(this.Html);
-
-    document.getElementById("experience").innerHTML = this.Html;
 
   }
 }
