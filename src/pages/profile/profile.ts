@@ -25,9 +25,6 @@ export class ProfilePage {
   street_number: any;
   place: any;
   design_card: any;
-
-  Html1: any;
-  Html2: any;
   Html: any;
 
 
@@ -41,9 +38,6 @@ export class ProfilePage {
     this.dataFinder.getJSONDataAsync("./assets/data/profile_data.json").then(data => {
     this.SetQueryOptionsData(data);
   });
-
-
-
   }
 
   /* Sets data with returned JSON array */

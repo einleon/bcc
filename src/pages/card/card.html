@@ -1,31 +1,15 @@
-<!--
-  Generated template for the CardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<ion-header>
   <ion-navbar>
     <ion-title>Business Card</ion-title>
+    <ion-buttons end>
+      <ion-icon name="build"></ion-icon>
+    </ion-buttons>
   </ion-navbar>
+</ion-header>
 
 
-
-<ion-card (click)="switch()">
-  <ion-card-content>
-    <div id = "name">Stephan Kleber</div>
-    <div id = "adress">
-      Wälderstraße 88c <br>
-      Andelsbuch
-    </div>
-    <div id = "contact">
-      +43680 12345678 <br>
-      steve@gmail.com
-    </div>
-  </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <div id = "card_logo">
-    <img id = "logo" src="assets/imgs/mpd.png"/>
+<ion-content padding>
+  <div id="card" (click)="switch()">
+    <button>JUHU</button>
   </div>
-</ion-card>
+</ion-content>
