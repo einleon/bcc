@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: 'Your Firebase Credentials Here',
-  authDomain: 'Your Firebase Credentials Here',
-  databaseURL: 'Your Firebase Credentials Here',
-  projectId: 'Your Firebase Credentials Here',
-  storageBucket: 'Your Firebase Credentials Here',
-  messagingSenderId: 'Your Firebase Credentials Here'
+  apiKey: "AIzaSyB7KaEOP_0y2Yt-wjj6pQacEuVY-s4_TaQ",
+  authDomain: "bcc-test-8dc57.firebaseapp.com",
+  databaseURL: "https://bcc-test-8dc57.firebaseio.com",
+  projectId: "bcc-test-8dc57",
+  storageBucket: "bcc-test-8dc57.appspot.com",
+  messagingSenderId: "1083401091515"
 };

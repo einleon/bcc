@@ -22,9 +22,9 @@ import {SignupPage} from "../pages/signup/signup";
 import {DataFinder} from '../providers/datafinder';
 import {HttpModule} from "@angular/http";
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {firebaseConfig} from './credentials';
+import {firebaseConfig} from "./credentials";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 
 @NgModule({
   declarations: [
@@ -46,8 +46,8 @@ import {firebaseConfig} from './credentials';
     BrowserModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -70,7 +70,8 @@ import {firebaseConfig} from './credentials';
     SplashScreen,
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataFinder
+    DataFinder,
+    AngularFireAuth
   ]
 })
 export class AppModule {

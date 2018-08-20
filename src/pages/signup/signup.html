@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -7,25 +6,25 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label fixed>Firstname</ion-label>
+      <ion-label floating>Firstname</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Lastname</ion-label>
+      <ion-label floating>Lastname</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>E-Mail</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-label floating>E-Mail</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Password</ion-label>
-      <ion-input type="password" value=""></ion-input>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-    <button ion-button block >Sign Up</button>
+    <button ion-button (click)="signup(user)">Sign Up</button>
   </ion-list>
 </ion-content>
+
