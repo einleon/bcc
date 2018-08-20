@@ -1,16 +1,16 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import {NgModule, ErrorHandler} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {MyApp} from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import {AboutPage} from '../pages/about/about';
+import {ContactPage} from '../pages/contact/contact';
+import {HomePage} from '../pages/home/home';
+import {TabsPage} from '../pages/tabs/tabs';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {BarcodeScanner} from '@ionic-native/barcode-scanner';
+import {SplashScreen} from '@ionic-native/splash-screen';
 import {CardPage} from "../pages/card/card";
 import {ContactsPage} from "../pages/contacts/contacts";
 import {ProfilePage} from "../pages/profile/profile";
@@ -19,8 +19,12 @@ import {SearchPage} from "../pages/search/search";
 import {StartPage} from "../pages/start/start";
 import {LoginPage} from "../pages/login/login";
 import {SignupPage} from "../pages/signup/signup";
-import { DataFinder } from '../providers/datafinder';
+import {DataFinder} from '../providers/datafinder';
 import {HttpModule} from "@angular/http";
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {firebaseConfig} from './credentials';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,8 @@ import {HttpModule} from "@angular/http";
   imports: [
     BrowserModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -67,4 +73,5 @@ import {HttpModule} from "@angular/http";
     DataFinder
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
