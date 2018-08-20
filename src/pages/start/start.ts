@@ -24,11 +24,11 @@ export class StartPage {
     console.log('ionViewDidLoad StartPage');
   }
 
-  login(){
+  pushlogin():void{
     this.navCtrl.push(LoginPage);
   }
 
-  signup(){
+  pushsignup():void {
     this.navCtrl.push(SignupPage);
   }
 

@@ -8,6 +8,7 @@ import { AngularFireAuth} from "angularfire2/auth";
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
+  providers: [AngularFireAuth]
 })
 export class SignupPage {
 
@@ -22,12 +23,17 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  async signup(user:User) {
+  async signup(user:User){
+
+    console.log("Kölbö!");
 
     try {
-
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
       console.log(result);
+      if (result) {
+        this.navCtrl.push(TabsPage);
+      }
+
     }
     catch (e) {
       console.error(e);
