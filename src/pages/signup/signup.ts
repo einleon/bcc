@@ -3,6 +3,9 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
 import {User} from "../../model/user";
 import { AngularFireAuth} from "angularfire2/auth";
+import { AlertController } from 'ionic-angular';
+
+
 /*
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -28,6 +31,7 @@ export class SignupPage {
   constructor(  private afAuth: AngularFireAuth,
                   private navCtrl: NavController,
                   public navParams: NavParams,
+                  public alertCtrl: AlertController
                  // public afs: AngularFirestore
                 ) {
 
@@ -44,19 +48,30 @@ export class SignupPage {
 
     console.log("Function Signup ausgeführt");
 
-    try {
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
-      console.log(result);
-      if (result) {
+    if (this.user.password == this.user.passwordTest) {
 
-      //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
+      try {
+        const result = await this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+        console.log(result);
+        if (result) {
 
-        this.navCtrl.push(TabsPage);
+          //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
+
+          this.navCtrl.push(TabsPage);
+        }
+
       }
-
+      catch (e) {
+        console.error(e);
+      }
     }
-    catch (e) {
-      console.error(e);
+    else {
+      const alert = this.alertCtrl.create({
+        title: "Passwords doesn't match",
+        subTitle: "Both Passwords need to be the same.",
+        buttons: ['OK']
+      });
+      alert.present();
     }
   }
 }
