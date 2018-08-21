@@ -69,7 +69,7 @@ export class ProfilePage {
   generateHTMLfromArray(array) {
     array.sort(function(a, b){return b.year - a.year});
 
-    this.Html = "<h2 class='profile_heading'>Experience and education</h2> <table id = 'customers'>";
+    this.Html = "<table id = 'customers'>";
 
     for (var i in array) {
       console.log("row " + i);

@@ -9,11 +9,11 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label floating>Firstname</ion-label>
+      <ion-label floating [(ngModel)]="user.firstname">Firstname</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Lastname</ion-label>
+      <ion-label floating [(ngModel)]="user.lastname">Lastname</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
     <ion-item>
@@ -24,7 +24,23 @@
       <ion-label floating>Password</ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-    <button ion-button (click)="signup(user)">Sign Up</button>
+    <ion-item>
+      <ion-label floating [(ngModel)]="user.company">Company</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating [(ngModel)]="user.place">Place</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating [(ngModel)]="user.slogan">Slogan</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating [(ngModel)]="user.topskill1">Top Skill</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
   </ion-list>
+  <button ion-button (click)="signup(user)">Sign Up</button>
 </ion-content>
 

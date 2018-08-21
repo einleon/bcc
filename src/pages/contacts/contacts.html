@@ -14,5 +14,14 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-list-header>
+      Contacts
+    </ion-list-header>
+    <ion-item  *ngFor="let user of users | async">
+      <h1></h1>
+      <p></p>
+      <p></p>
+    </ion-item>
+  </ion-list>
 </ion-content>

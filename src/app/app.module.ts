@@ -25,6 +25,8 @@ import {HttpModule} from "@angular/http";
 import {firebaseConfig} from "./credentials";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

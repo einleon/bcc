@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>{{firstname}} {{lastname}}</ion-title>
     <ion-buttons end>
-        <ion-icon name="build"></ion-icon>
+      <ion-icon name="build"></ion-icon>
     </ion-buttons>
   </ion-navbar>
 
@@ -26,17 +26,52 @@
     </ion-row>
   </ion-grid>
   <ion-grid>
-    <h2 class="profile_heading">Top-Skills</h2>
-    <ion-row>
-      <ion-col>
-        <ion-item>{{topskill1}}</ion-item>
-        <ion-item>{{topskill2}}</ion-item>
-        <ion-item>{{topskill3}}</ion-item>
-      </ion-col>
-    </ion-row>
+  <h2 class="profile_heading">Top-Skills</h2>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>{{topskill1}}</ion-item>
+      <ion-item-options>
+        <button ion-button color="danger">
+          <ion-icon name="ios-trash"></ion-icon>
+          delete
+        </button>
+        <button ion-button color="success">
+          <ion-icon name="ios-create"></ion-icon>
+          edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>{{topskill2}}</ion-item>
+      <ion-item-options>
+        <button ion-button color="danger">
+          <ion-icon name="ios-trash"></ion-icon>
+          delete
+        </button>
+        <button ion-button color="success">
+          <ion-icon name="ios-create"></ion-icon>
+          edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>{{topskill3}}</ion-item>
+      <ion-item-options>
+        <button ion-button color="danger">
+          <ion-icon name="ios-trash"></ion-icon>
+          delete
+        </button>
+        <button ion-button color="success">
+          <ion-icon name="ios-create"></ion-icon>
+          edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
   </ion-grid>
   <ion-grid>
-  <div id = "experience">
-  </div>
+    <h2 class='profile_heading'>Experience and education</h2>
+    <div id="experience">
+    </div>
   </ion-grid>
 </ion-content>
