@@ -1,4 +1,4 @@
-export interface User {
+export interface UserLogin {
   email: string;
   password: string;
   passwordTest: string;
@@ -9,4 +9,5 @@ export interface User {
   slogan: string;
   topskill1: string;
   */
+
 }

@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
-import {User} from "../../model/user";
+import {UserLogin} from "../../model/userLogin";
 import { AngularFireAuth} from "angularfire2/auth";
 import { AlertController } from 'ionic-angular';
+import {CreateProfilePage} from "../create-profile/create-profile";
 
 
 /*
@@ -23,7 +24,7 @@ import { Observable } from 'rxjs/Observable';
 export class SignupPage {
 
 
-  user = {} as User;
+  user = {} as UserLogin;
 
 // users: Observable<User[]>;
 // usersCollectionRef: AngularFirestoreCollection<User>;
@@ -44,7 +45,7 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  async signup(user:User){
+  async signup(user:UserLogin){
 
     console.log("Function Signup ausgeführt");
 
@@ -57,7 +58,7 @@ export class SignupPage {
 
           //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
 
-          this.navCtrl.push(TabsPage);
+          this.navCtrl.push(CreateProfilePage);
         }
 
       }
