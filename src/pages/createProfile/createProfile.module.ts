@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CreateProfilePage } from './create-profile';
+import { CreateProfilePage } from './createProfile';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
-import {User} from "../../model/userLogin";
+import {UserLogin} from "../../model/userLogin";
 import {AngularFireAuth} from "angularfire2/auth";
 
 @IonicPage()
@@ -12,7 +12,7 @@ import {AngularFireAuth} from "angularfire2/auth";
 })
 export class LoginPage {
 
-  user = {} as User;
+  user = {} as UserLogin;
 
 
 
@@ -26,9 +26,9 @@ constructor(private afAuth : AngularFireAuth, public navCtrl: NavController, pub
     console.log('ionViewDidLoad LoginPage');
   }
 
-  async login(user : User) {
+  async login(user : UserLogin) {
     try {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.mail, user.password);
       console.log(result);
       if (result) {
         this.navCtrl.push(TabsPage);

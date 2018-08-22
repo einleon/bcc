@@ -4,7 +4,9 @@ import {TabsPage} from "../tabs/tabs";
 import {UserLogin} from "../../model/userLogin";
 import { AngularFireAuth} from "angularfire2/auth";
 import { AlertController } from 'ionic-angular';
-import {CreateProfilePage} from "../create-profile/create-profile";
+import {CreateProfilePage} from "../createProfile/createProfile";
+import {UserProfile} from "../../model/userProfile";
+import {User} from "firebase";
 
 
 /*
@@ -23,8 +25,9 @@ import { Observable } from 'rxjs/Observable';
 
 export class SignupPage {
 
-
+  userProfile = {} as UserProfile;
   user = {} as UserLogin;
+  private static mailreturn: any;
 
 // users: Observable<User[]>;
 // usersCollectionRef: AngularFirestoreCollection<User>;
@@ -52,12 +55,14 @@ export class SignupPage {
     if (this.user.password == this.user.passwordTest) {
 
       try {
-        const result = await this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+        const result = await this.afAuth.auth.createUserWithEmailAndPassword(this.user.mail, this.user.password);
         console.log(result);
         if (result) {
 
           //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
 
+          console.log("LOG BEI SIGNUP:" + this.user.mail);
+          this.userProfile.mail = this.user.mail;
           this.navCtrl.push(CreateProfilePage);
         }
 
@@ -74,5 +79,9 @@ export class SignupPage {
       });
       alert.present();
     }
+  }
+
+  getMail() {
+    return this.userProfile.mail;
   }
 }

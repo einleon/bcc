@@ -21,13 +21,15 @@ import {LoginPage} from "../pages/login/login";
 import {SignupPage} from "../pages/signup/signup";
 import {DataFinder} from '../providers/datafinder';
 import {HttpModule} from "@angular/http";
-import {CreateProfilePage} from "../pages/create-profile/create-profile";
+import {CreateProfilePage} from "../pages/createProfile/createProfile";
 
 import {firebaseConfig} from "./credentials";
 import {AngularFireModule} from "angularfire2";
 import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 
 
 @NgModule({
@@ -70,7 +72,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     SearchPage,
     StartPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    CreateProfilePage
   ],
   providers: [
     StatusBar,

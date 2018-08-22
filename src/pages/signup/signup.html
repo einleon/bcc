@@ -8,19 +8,10 @@
 
 <ion-content padding>
   <ion-list>
-    <!--
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.firstname">Firstname</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.lastname">Lastname</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    -->
+
     <ion-item>
       <ion-label floating>E-Mail</ion-label>
-      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.mail"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Password</ion-label>
@@ -30,24 +21,7 @@
       <ion-label floating>Repeat Password</ion-label>
       <ion-input type="password" [(ngModel)]="user.passwordTest"></ion-input>
     </ion-item>
-    <!--
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.company">Company</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.place">Place</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.slogan">Slogan</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating [(ngModel)]="user.topskill1">Top Skill</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-    -->
+
   </ion-list>
   <button ion-button (click)="signup(user)">Sign Up</button>
 </ion-content>
