@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {TabsPage} from "../tabs/tabs";
 import {UserLogin} from "../../model/userLogin";
-import { AngularFireAuth} from "angularfire2/auth";
-import { AlertController } from 'ionic-angular';
+import {AngularFireAuth} from "angularfire2/auth";
+import {AlertController} from 'ionic-angular';
 import {CreateProfilePage} from "../createProfile/createProfile";
 import {UserProfile} from "../../model/userProfile";
 import {User} from "firebase";
@@ -32,12 +32,12 @@ export class SignupPage {
 // users: Observable<User[]>;
 // usersCollectionRef: AngularFirestoreCollection<User>;
 
-  constructor(  private afAuth: AngularFireAuth,
-                  private navCtrl: NavController,
-                  public navParams: NavParams,
-                  public alertCtrl: AlertController
-                 // public afs: AngularFirestore
-                ) {
+  constructor(private afAuth: AngularFireAuth,
+              private navCtrl: NavController,
+              public navParams: NavParams,
+              public alertCtrl: AlertController
+              // public afs: AngularFirestore
+  ) {
 
     //this.usersCollectionRef = this.afs.collection('users');
     //this.users = this.usersCollectionRef.valueChanges();
@@ -48,7 +48,7 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  async signup(user:UserLogin){
+  async signup(user: UserLogin) {
 
     console.log("Function Signup ausgeführt");
 
@@ -79,9 +79,5 @@ export class SignupPage {
       });
       alert.present();
     }
-  }
-
-  getMail() {
-    return this.userProfile.mail;
   }
 }

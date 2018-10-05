@@ -7,6 +7,9 @@ import {DataFinder} from "../../providers/datafinder";
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
+
+//Connect Useres to their data: https://stackoverflow.com/questions/30910704/how-do-i-link-each-user-to-their-data-in-firebase
+
 export class ProfilePage {
 
   //Create Variables
