@@ -61,7 +61,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFirestoreModule,
     IonicModule.forRoot(MyApp, {
         tabsHideOnSubPages: true,
-      }, {}
+      },
     )],
   bootstrap: [IonicApp],
   entryComponents: [
