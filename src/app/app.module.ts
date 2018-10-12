@@ -32,6 +32,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -53,11 +54,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     BrowserModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(MyApp),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireDatabaseModule
-  ],
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    IonicModule.forRoot(MyApp, {
+        tabsHideOnSubPages: true,
+      }, {}
+    )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

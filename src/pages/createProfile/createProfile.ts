@@ -9,7 +9,8 @@ import "rxjs/add/operator/map";
 import {UserProfile} from "../../model/userProfile";
 import {SignupPage} from "../signup/signup";
 import * as firebase from "firebase";
-
+import {ContactsPage} from "../contacts/contacts";
+import 'firebase/firestore';
 
 export interface UserProfile2 {
   firstname: string;
@@ -21,7 +22,6 @@ export interface UserProfile2 {
   topskill1: string;
   topskill2: string;
   topskill3: string;
-  userID: any;
 }
 
 @IonicPage()
@@ -61,16 +61,31 @@ export class CreateProfilePage {
       slogan: this.userInt.slogan,
       topskill1: this.userInt.topskill1,
       topskill2: this.userInt.topskill2,
-      topskill3: this.userInt.topskill3,
-      userID: this.userInt.userID
+      topskill3: this.userInt.topskill3
     })
       .then((result) => {
         console.log("Document addded with id >>> ", result.id);
+        this.navCtrl.push(ContactsPage);
       })
       .catch((error) => {
         console.error("Error adding document: ", error);
       });
   }
+
+  test2(){
+    let db = firebase.firestore();
+    db.collection("users").add({
+      firstname: this.userInt.firstname,
+      lastname: this.userInt.lastname,
+      location: this.userInt.location,
+      company: this.userInt.company,
+      job: this.userInt.job,
+      slogan: this.userInt.slogan,
+      topskill1: this.userInt.topskill1,
+      topskill2: this.userInt.topskill2,
+      topskill3: this.userInt.topskill3
+    }).then((data )=>{console.log(data)}).catch((error)=>{console.log})
+    }
 
   initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -81,7 +96,7 @@ export class CreateProfilePage {
         console.log("Anonym: " + user.isAnonymous);
         console.log("UID: " + user.uid);
 
-        this.userInt.userID = user.uid;
+        //this.userInt.userID = user.uid;
 
         /*
         // User is signed in.
@@ -94,6 +109,7 @@ export class CreateProfilePage {
         var providerData = user.providerData;
         // ...
         */
+
         } else {
         // User is signed out.
         // ...

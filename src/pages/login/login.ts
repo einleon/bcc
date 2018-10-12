@@ -4,6 +4,7 @@ import {TabsPage} from "../tabs/tabs";
 import {UserLogin} from "../../model/userLogin";
 import {AngularFireAuth} from "angularfire2/auth";
 import * as firebase from "firebase";
+import {ContactsPage} from "../contacts/contacts";
 
 @IonicPage()
 @Component({

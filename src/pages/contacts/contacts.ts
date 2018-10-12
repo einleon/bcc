@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 import {UserLogin} from "../../model/userLogin";
-import { AngularFireAuth} from "angularfire2/auth";
+import {AngularFireAuth} from "angularfire2/auth";
 
-import { AngularFirestore } from 'angularfire2/firestore';
-import { AngularFirestoreCollection } from 'angularfire2/firestore';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFirestoreCollection} from 'angularfire2/firestore';
+import {AngularFireDatabase} from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
 import * as firebase from "firebase";
+import {StartPage} from "../start/start";
+
 /**
  * Generated class for the ContactsPage page.
  *
@@ -23,18 +25,18 @@ import * as firebase from "firebase";
 })
 export class ContactsPage {
 
- //user = {} as UserProfile;
+  //user = {} as UserProfile;
 
- // users: Observable<User[]>;
- // usersCollectionRef: AngularFirestoreCollection<User>;
+  // users: Observable<User[]>;
+  // usersCollectionRef: AngularFirestoreCollection<User>;
 
   constructor(private afAuth: AngularFireAuth,
               private navCtrl: NavController,
+              private afDatabase: AngularFireDatabase,
               public navParams: NavParams,
-              //public afs: AngularFirestore
   ) {
-  //  this.usersCollectionRef = this.afs.collection('users');
-  //  this.users = this.usersCollectionRef.valueChanges();
+    //  this.usersCollectionRef = this.afs.collection('users');
+    //  this.users = this.usersCollectionRef.valueChanges();
   }
 
   ionViewDidLoad() {
@@ -45,10 +47,6 @@ export class ContactsPage {
   initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        console.log("User wurde eingeloggt! JUHU");
-        console.log("Email: " + user.email);
-        console.log("EmailVerified: " + user.emailVerified);
-        console.log("Anonym: " + user.isAnonymous);
         console.log("UID: " + user.uid);
 
         /*
@@ -62,12 +60,18 @@ export class ContactsPage {
         var providerData = user.providerData;
         // ...
         */
+
+
       } else {
         // User is signed out.
         // ...
-        console.log("User nicht eingeloggt");
+        console.log("User nicht eingeloggt --> Wird zur Start Page gebracht!");
       }
     });
   }
 
+  async logout(): Promise<any> {
+    this.navCtrl.push(StartPage);
+    this.afAuth.auth.signOut();
+  }
 }
