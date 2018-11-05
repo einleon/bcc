@@ -8,6 +8,8 @@ import {ContactPage} from '../pages/contact/contact';
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 
+//import { HttpClientModule } from "@angular/common/http";
+
 import {StatusBar} from '@ionic-native/status-bar';
 import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -30,9 +32,6 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
-
-
-
 @NgModule({
   declarations: [
     MyApp,
@@ -43,12 +42,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     CardPage,
     ContactsPage,
     ProfilePage,
+    CreateProfilePage,
     ScanPage,
     SearchPage,
     StartPage,
     LoginPage,
-    SignupPage,
-    CreateProfilePage
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -59,6 +58,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+   // HttpClientModule,
     IonicModule.forRoot(MyApp, {
         tabsHideOnSubPages: true,
       },
@@ -86,7 +86,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataFinder,
-    AngularFireAuth
+    AngularFireAuth,
+   // HttpClientModule
   ]
 })
 export class AppModule {

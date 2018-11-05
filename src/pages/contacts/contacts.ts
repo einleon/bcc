@@ -41,8 +41,13 @@ export class ContactsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsPage');
+
+
+
     this.initApp();
   }
+
+
 
   initApp() {
     firebase.auth().onAuthStateChanged(function (user) {

@@ -7,6 +7,7 @@ import {AlertController} from 'ionic-angular';
 import {CreateProfilePage} from "../createProfile/createProfile";
 import {UserProfile} from "../../model/userProfile";
 import {User} from "firebase";
+import {AngularFirestore} from "angularfire2/firestore";
 
 
 /*
@@ -33,6 +34,7 @@ export class SignupPage {
 // usersCollectionRef: AngularFirestoreCollection<User>;
 
   constructor(private afAuth: AngularFireAuth,
+              private afs: AngularFirestore,
               private navCtrl: NavController,
               public navParams: NavParams,
               public alertCtrl: AlertController
@@ -46,6 +48,7 @@ export class SignupPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
+
   }
 
   async signup(user: UserLogin) {
@@ -61,8 +64,11 @@ export class SignupPage {
 
           //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
 
+          this.afs.doc(`users/${result.user.uid}`).set({email: result.user.email, firstname: "", lastname: ""}).then(console.log);
+
           console.log("LOG BEI SIGNUP:" + this.user.mail);
-          this.userProfile.mail = this.user.mail;
+         // this.userProfile.mail = this.user.mail;
+
           this.navCtrl.push(CreateProfilePage);
         }
 
@@ -80,4 +86,5 @@ export class SignupPage {
       alert.present();
     }
   }
+
 }
