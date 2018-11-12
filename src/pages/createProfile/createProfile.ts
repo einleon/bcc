@@ -14,6 +14,7 @@ import 'firebase/firestore';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
 import Firestore = firebase.firestore.Firestore;
+import {TabsPage} from "../tabs/tabs";
 
 
 export interface UserProfile2 {
@@ -77,7 +78,7 @@ export class CreateProfilePage {
     }).catch((error) => {
       console.log
     })
-    this.navCtrl.push(ContactsPage);
+    this.navCtrl.push(TabsPage);
   }
 
   //  Firestore.instance.collection('users').document(uid).updateData({ 'firstname': this.userInt.firstname, 'lastname': this.userInt.lastname });

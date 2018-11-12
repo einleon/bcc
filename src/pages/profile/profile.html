@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{firstname}} {{lastname}}</ion-title>
+  <ion-navbar><!--ngFor="let user of user$ | async -->
+  <!--  <ion-title [(ngModel)]="user.firstname"></ion-title> -->
     <ion-buttons end>
       <ion-icon name="build"></ion-icon>
     </ion-buttons>
@@ -17,9 +17,10 @@
 
 <ion-content padding>
 
+  <h3>  {{user | async | json}} </h3>
   <!--  <pre>{{userDoc | json | async}}</pre> -->
 
-
+<!--
   <ion-img class="profile-photo" width="100" height="100" src="assets/imgs/wgd.jpg"></ion-img>
   <ion-grid>
     <ion-row>
@@ -78,4 +79,5 @@
     <div id="experience">
     </div>
   </ion-grid>
+  -->
 </ion-content>
