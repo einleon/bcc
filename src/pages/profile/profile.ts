@@ -68,7 +68,13 @@ export class ProfilePage {
   writeUserProfile3() {
     this.userDoc =  this.afs.doc('users/' + firebase.auth().currentUser.uid);
     this.user = this.userDoc.valueChanges();
+
     console.log(this.user);
+    let userProfile = this.user;
+    console.log("TESTLOG: " + userProfile);
+    /*
+    userProfile = JSON.parse(this.user.toString());
+    console.log("Lastname: " + userProfile.lastname); */
   }
 
   writeUserProfile2() {

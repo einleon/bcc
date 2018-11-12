@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar><!--ngFor="let user of user$ | async -->
-  <!--  <ion-title [(ngModel)]="user.firstname"></ion-title> -->
+  <ion-navbar> <!-- ngFor="let user of userProfile | async" -->
+    <ion-title>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</ion-title>
     <ion-buttons end>
       <ion-icon name="build"></ion-icon>
     </ion-buttons>
@@ -17,67 +17,65 @@
 
 <ion-content padding>
 
-  <h3>  {{user | async | json}} </h3>
-  <!--  <pre>{{userDoc | json | async}}</pre> -->
+  <!--  <pre>{{userDoc | json | async}}</pre>
+   <h3> {{user | async | json}} </h3> -->
 
-<!--
   <ion-img class="profile-photo" width="100" height="100" src="assets/imgs/wgd.jpg"></ion-img>
   <ion-grid>
     <ion-row>
       <ion-col>
-        <h2 class="slogan">{{slogan}}</h2>
-        <h3 class="job">{{job}} at {{company}}</h3>
+        <h2 class="slogan">{{(user | async)?.slogan}}</h2>
+        <h3 class="job">{{(user | async)?.job}} at {{(user | async)?.company}}</h3>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-grid>
-  <h2 class="profile_heading">Top-Skills</h2>
-  <ion-list>
-    <ion-item-sliding>
-      <ion-item>{{topskill1}}</ion-item>
-      <ion-item-options>
-        <button ion-button color="danger">
-          <ion-icon name="ios-trash"></ion-icon>
-          delete
-        </button>
-        <button ion-button color="success">
-          <ion-icon name="ios-create"></ion-icon>
-          edit
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item>{{topskill2}}</ion-item>
-      <ion-item-options>
-        <button ion-button color="danger">
-          <ion-icon name="ios-trash"></ion-icon>
-          delete
-        </button>
-        <button ion-button color="success">
-          <ion-icon name="ios-create"></ion-icon>
-          edit
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-      <ion-item>{{topskill3}}</ion-item>
-      <ion-item-options>
-        <button ion-button color="danger">
-          <ion-icon name="ios-trash"></ion-icon>
-          delete
-        </button>
-        <button ion-button color="success">
-          <ion-icon name="ios-create"></ion-icon>
-          edit
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+    <h2 class="profile_heading">Top-Skills</h2>
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item>{{(user | async)?.topskill1}}</ion-item>
+        <ion-item-options>
+          <button ion-button color="danger">
+            <ion-icon name="ios-trash"></ion-icon>
+            delete
+          </button>
+          <button ion-button color="success">
+            <ion-icon name="ios-create"></ion-icon>
+            edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item>{{(user | async)?.topskill2}}</ion-item>
+        <ion-item-options>
+          <button ion-button color="danger">
+            <ion-icon name="ios-trash"></ion-icon>
+            delete
+          </button>
+          <button ion-button color="success">
+            <ion-icon name="ios-create"></ion-icon>
+            edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item>{{(user | async)?.topskill3}}</ion-item>
+        <ion-item-options>
+          <button ion-button color="danger">
+            <ion-icon name="ios-trash"></ion-icon>
+            delete
+          </button>
+          <button ion-button color="success">
+            <ion-icon name="ios-create"></ion-icon>
+            edit
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
   </ion-grid>
   <ion-grid>
     <h2 class='profile_heading'>Experience and education</h2>
     <div id="experience">
     </div>
   </ion-grid>
-  -->
 </ion-content>
