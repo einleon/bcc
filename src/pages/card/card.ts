@@ -1,6 +1,10 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {DataFinder} from "../../providers/datafinder";
+import {AngularFirestore, AngularFirestoreDocument} from "angularfire2/firestore";
+import {UserData} from "../../model/UserData";
+import {Observable} from "rxjs/Observable";
+import * as firebase from "firebase";
 
 
 @IonicPage()
@@ -28,16 +32,26 @@ export class CardPage {
   place: any;
   design_card: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataFinder: DataFinder) {
+  userDoc: AngularFirestoreDocument<UserData>;
+  user: Observable<UserData>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataFinder: DataFinder, private afs: AngularFirestore) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    this.getUserData();
     this.dataFinder.getJSONDataAsync("./assets/data/profile_data.json").then(data => {
       this.SetQueryOptionsData(data);
     });
     this.state = true;
   }
+
+  getUserData() {
+    this.userDoc = this.afs.doc('users/' + firebase.auth().currentUser.uid);
+    this.user = this.userDoc.valueChanges();
+  }
+
 
   /* Sets data with returned JSON array */
   SetQueryOptionsData(data: any) {
