@@ -50,6 +50,10 @@ export class CardPage {
   getUserData() {
     this.userDoc = this.afs.doc('users/' + firebase.auth().currentUser.uid);
     this.user = this.userDoc.valueChanges();
+
+    console.log(this.user);
+    let userProfile = this.user;
+    console.log("TESTLOG: " + userProfile);
   }
 
 
@@ -86,7 +90,7 @@ export class CardPage {
     else {
       this.card = "<ion-card>" +
         "<ion-card-content>" +
-        "<div id=\"name\">" + this.firstname + " " + this.lastname + "</div>" +
+        "<div id='name'>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</div>" +
         "<div id=\"adress\">" +
         this.street + " " + this.street_number + "<br>" +
         this.place +
@@ -101,5 +105,9 @@ export class CardPage {
       document.getElementById("card").innerHTML = this.card;
       this.state = false;
     }
+  }
+
+  async switch2() {
+    document.querySelector("#myCard").classList.toggle("flip")
   }
 }

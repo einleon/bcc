@@ -9,7 +9,53 @@
 
 
 <ion-content padding>
+  <!--
+    <h1>Test-Karte</h1>
+    <div class="card front">
+      <div class="blue"></div>
+      <div class="yellow"></div>
+      <div class="pink"></div>
+      <div class="dots"></div>
+      <div class="personal-intro">
+        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
+        <p>{{(user | async)?.job}} at {{(user | async)?.company}}</p>
+      </div>
+    </div>
+    <div class="card back">
+      <div class="yellow"></div>
+      <div class="top dots"></div>
+      <div class="personal-info">
+        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
+        <p>"{{(user | async)?.slogan}}"</p>
+        <p>{{(user | async)?.location}}</p>
+        <p>{{(user | async)?.company}}</p>
+        <p>{{(user | async)?.job}}</p>
+      </div>
+      <div class="bottom dots"></div>
+      <div class="pink"></div>
+    </div> -->
+
+  <!-- <h1>Flip-Karte</h1> -->
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper" (click)="switch2()">
+      <div class="front">
+        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
+        <p>{{(user | async)?.job}} at {{(user | async)?.company}}</p>
+      </div>
+      <div class="back">
+        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
+        <p>{{(user | async)?.location}}</p>
+        <p>{{(user | async)?.company}}</p>
+        <p>{{(user | async)?.job}}</p>
+      </div>
+    </div>
+  </div>
+  <p></p>
+
+  <!--
+  <h1>Karte 1</h1>
   <div id="card" (click)="switch()">
     <button>JUHU</button>
   </div>
+  -->
 </ion-content>
