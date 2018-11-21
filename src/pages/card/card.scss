@@ -168,17 +168,17 @@ page-card {
   .flip-container {
     perspective: 1000px;
   }
-  /* flip the pane when hovered
+  //flip the pane when hovered
   .flip-container:hover .flipper, .flip-container.hover .flipper {
     transform: rotateY(180deg);
   }
-  */
 
   //Flip when clicked
+  /*
   .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
     transform: rotateY(180deg);
   }
-
+*/
   .flip-container, .front, .back {
     width: 320px;
     height: 480px;
@@ -206,15 +206,13 @@ page-card {
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
-    background-color: #4CAF50;
-
+    background-color: #488aff;
   }
 
   /* back, initially hidden pane */
   .back {
     transform: rotateY(180deg);
-    background-color: #4CAF50;
-
+    border-top: 8px solid #488aff;
   }
 
   /*

@@ -108,6 +108,6 @@ export class CardPage {
   }
 
   async switch2() {
-    document.querySelector("#myCard").classList.toggle("flip")
+    //document.querySelector("#myCard").classList.toggle("flip")
   }
 }
