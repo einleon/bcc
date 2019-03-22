@@ -30,8 +30,8 @@ export class SignupPage {
   user = {} as UserLogin;
   private static mailreturn: any;
 
-// users: Observable<User[]>;
-// usersCollectionRef: AngularFirestoreCollection<User>;
+ // users: Observable<User[]>;
+  //usersCollectionRef: AngularFirestoreCollection<User>;
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
@@ -41,8 +41,8 @@ export class SignupPage {
               // public afs: AngularFirestore
   ) {
 
-    //this.usersCollectionRef = this.afs.collection('users');
-    //this.users = this.usersCollectionRef.valueChanges();
+   // this.usersCollectionRef = this.afs.collection('users');
+   // this.users = this.usersCollectionRef.valueChanges();
 
   }
 
@@ -51,7 +51,7 @@ export class SignupPage {
 
   }
 
-  async signup(user: UserLogin) {
+  async signup() {
 
     console.log("Function Signup ausgeführt");
 
@@ -62,12 +62,13 @@ export class SignupPage {
         console.log(result);
         if (result) {
 
-          //  this.usersCollectionRef.add({email: user.email, password: user.password, firstname: user.firstname, lastname: user.lastname, company: user.company, place: user.place, slogan: user.slogan, topskill1: user.topskill1});
+          this.afs.doc(`users/${result.user.uid}`).set({
+            email: result.user.email,
+            firstname: "",
+            lastname: ""
+          }).then(console.log);
 
-          this.afs.doc(`users/${result.user.uid}`).set({email: result.user.email, firstname: "", lastname: ""}).then(console.log);
-
-          console.log("LOG BEI SIGNUP:" + this.user.mail);
-         // this.userProfile.mail = this.user.mail;
+          console.log("Sign Up Test Log:" + this.user.mail);
 
           this.navCtrl.push(CreateProfilePage);
         }

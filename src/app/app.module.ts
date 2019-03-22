@@ -24,13 +24,13 @@ import {SignupPage} from "../pages/signup/signup";
 import {DataFinder} from '../providers/datafinder';
 import {HttpModule} from "@angular/http";
 import {CreateProfilePage} from "../pages/createProfile/createProfile";
+import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 
 import {firebaseConfig} from "./credentials";
 import {AngularFireModule} from "angularfire2";
-import {AngularFireAuth, AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @NgModule({
   declarations: [

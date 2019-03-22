@@ -49,13 +49,13 @@ export class ProfilePage {
 
   constructor(private afs: AngularFirestore, public navCtrl: NavController, public navParams: NavParams, private dataFinder: DataFinder) {
     this.userCollectionRef = this.afs.collection<UserData>('users');
-  //  this.user$ = this.userCollectionRef.valueChanges();
+    //  this.user$ = this.userCollectionRef.valueChanges();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     this.writeUserProfile3();
-   // console.log("Testlog: " + this.afs.doc('users/' + firebase.auth().currentUser.uid).ref.get());
+    // console.log("Testlog: " + this.afs.doc('users/' + firebase.auth().currentUser.uid).ref.get());
 
     /*
         this.dataFinder.getJSONDataAsync("./assets/data/profile_data.json").then(data => {
@@ -66,28 +66,22 @@ export class ProfilePage {
   }
 
   writeUserProfile3() {
-    this.userDoc =  this.afs.doc('users/' + firebase.auth().currentUser.uid);
+    this.userDoc = this.afs.doc('users/' + firebase.auth().currentUser.uid);
     this.user = this.userDoc.valueChanges();
 
     console.log(this.user);
-    let userProfile = this.user;
-    console.log("TESTLOG: " + userProfile);
-    /*
-    userProfile = JSON.parse(this.user.toString());
-    console.log("Lastname: " + userProfile.lastname); */
   }
 
   writeUserProfile2() {
-   // const document: AngularFirestoreDocument<Item> = afs.document('users/' + firebase.auth().currentUser.uid);
+    // const document: AngularFirestoreDocument<Item> = afs.document('users/' + firebase.auth().currentUser.uid);
 
-   // const document$: Observable<Item> = document.valueChanges()
+    // const document$: Observable<Item> = document.valueChanges()
   }
 
 
   writeUserProfile() {
     let db = firebase.firestore();
     let docRef = db.collection("users").doc(firebase.auth().currentUser.uid);
-
 
 
     docRef.get().then(function (doc) {
@@ -119,37 +113,39 @@ export class ProfilePage {
 
     // let userDoc = fireStore.doc<any>('users/' + firebase.auth().currentUser.uid);
 */
-  } /*
-
-
-  // Sets data with returned JSON array
-  /*
-  SetQueryOptionsData(data: any) {
-    //Array Data into Variables
-
-    this.firstname = data.firstname;
-    this.lastname = data.lastname;
-    this.mail = data.mail;
-    this.slogan = data.slogan;
-    this.job = data.job;
-    this.company = data.company;
-    this.experience = data.experience;
-    this.topskill1 = data.topskill1;
-    this.topskill2 = data.topskill2;
-    this.topskill3 = data.topskill3;
-    this.phone = data.phone;
-    this.street = data.street;
-    this.street_number = data.street_number;
-    this.place = data.place;
-    this.design_card = data.design_card;
-
-    //Generate HTML Experience Table String from the Experience Array.
- //   this.generateHTMLfromArray(this.experience);
-    //Write out generated String
-    document.getElementById("experience").innerHTML = this.Html;
   }
-  */
-/*
+
+  /*
+
+
+   // Sets data with returned JSON array
+   /*
+   SetQueryOptionsData(data: any) {
+     //Array Data into Variables
+
+     this.firstname = data.firstname;
+     this.lastname = data.lastname;
+     this.mail = data.mail;
+     this.slogan = data.slogan;
+     this.job = data.job;
+     this.company = data.company;
+     this.experience = data.experience;
+     this.topskill1 = data.topskill1;
+     this.topskill2 = data.topskill2;
+     this.topskill3 = data.topskill3;
+     this.phone = data.phone;
+     this.street = data.street;
+     this.street_number = data.street_number;
+     this.place = data.place;
+     this.design_card = data.design_card;
+
+     //Generate HTML Experience Table String from the Experience Array.
+  //   this.generateHTMLfromArray(this.experience);
+     //Write out generated String
+     document.getElementById("experience").innerHTML = this.Html;
+   }
+   */
+
   generateHTMLfromArray(array) {
     array.sort(function (a, b) {
       return b.year - a.year
@@ -173,5 +169,5 @@ export class ProfilePage {
     console.log(this.Html);
 
   }
-  */
+
 }

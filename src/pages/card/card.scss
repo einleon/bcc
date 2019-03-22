@@ -92,6 +92,7 @@ page-card {
       }
 
       .pink {
+
         background-color: pink;
         clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
         grid-row: 1 / span 3;
@@ -186,7 +187,7 @@ page-card {
 
   /* flip speed goes here */
   .flipper {
-    transition: 0.6s;
+    transition: 0.4s;
     transform-style: preserve-3d;
 
     position: relative;
@@ -203,16 +204,23 @@ page-card {
 
   /* front pane, placed above back */
   .front {
+    border-top: 8px solid #488aff;
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
-    background-color: #488aff;
+    background-color: whitesmoke;
+    // background-color: #488aff;
   }
 
   /* back, initially hidden pane */
   .back {
     transform: rotateY(180deg);
-    border-top: 8px solid #488aff;
+    background-color: whitesmoke;
+    // border-top: 8px solid #488aff;
+  }
+
+  .profile-photo {
+    position: center;
   }
 
   /*

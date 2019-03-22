@@ -27,9 +27,9 @@ export class LoginPage {
     this.initApp();
   }
 
-  async login(user: UserLogin) {
+  async login() {
     try {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.mail, user.password);
+      const result = this.afAuth.auth.signInWithEmailAndPassword(this.user.mail, this.user.password);
       console.log(result);
       if (result) {
         this.navCtrl.push(TabsPage);
@@ -41,6 +41,8 @@ export class LoginPage {
     }
   }
 
+
+  sn
   initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {

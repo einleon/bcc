@@ -39,14 +39,14 @@
   <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper" (click)="switch2()">
       <div class="front">
-        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
+        <p></p>
+        <p></p>
+        <h3>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</h3>
         <p>{{(user | async)?.job}} at {{(user | async)?.company}}</p>
+        <p>{{(user | async)?.location}}</p>
       </div>
       <div class="back">
-        <p>{{(user | async)?.firstname}} {{(user | async)?.lastname}}</p>
-        <p>{{(user | async)?.location}}</p>
-        <p>{{(user | async)?.company}}</p>
-        <p>{{(user | async)?.job}}</p>
+        <ion-img class="profile-photo" width="320px" height="480px" src="assets/imgs/mpd.png"></ion-img>
       </div>
     </div>
   </div>
