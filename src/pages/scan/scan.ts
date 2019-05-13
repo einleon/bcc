@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 
 @IonicPage()
 @Component({
@@ -10,33 +10,32 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 export class ScanPage {
 
   options: BarcodeScannerOptions;
-  encodText: string='';
-  encodedData: any={};
-  scannedData: any={};
+  encodText: string = '';
+  encodedData: any = {};
+  scannedData: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public scanner:BarcodeScanner) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public scanner: BarcodeScanner) {
   }
 
-  scan(){
-    this.options= {
-      prompt: 'Scan your barcode'
+  scan() {
+    this.options = {
+      prompt: 'Scan your QR-Code'
     };
     this.scanner.scan().then((data) => {
       this.scannedData = data;
-    },(err) => {
+    }, (err) => {
       console.log("Error: ", err);
     })
     console.log("Scan ausgeführt!");
   }
 
-  encode(){
+  encode() {
     this.scanner.encode(this.scanner.Encode.TEXT_TYPE, this.encodText).then((data) => {
       this.encodedData = data;
-    },(err) => {
+    }, (err) => {
       console.log("Error: ", err);
     })
     console.log("Encode ausgeführt!");
-
   }
 
   ionViewDidLoad() {
@@ -44,3 +43,4 @@ export class ScanPage {
   }
 
 }
+

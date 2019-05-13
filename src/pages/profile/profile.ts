@@ -78,7 +78,6 @@ export class ProfilePage {
     // const document$: Observable<Item> = document.valueChanges()
   }
 
-
   writeUserProfile() {
     let db = firebase.firestore();
     let docRef = db.collection("users").doc(firebase.auth().currentUser.uid);
